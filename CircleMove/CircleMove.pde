@@ -9,6 +9,7 @@ void setup() {
   c2.speed(0.1);
 }
 
+// Just simple movements
 void draw(){
   background(103);
   //c1.change(0,200,100);
@@ -21,7 +22,7 @@ void draw(){
 }
 
 
-// Circle Class. All definitions go here. This is cool
+// Circle Class. All definitions go here
 class Circle {
 float x,y;
 float diameter;
