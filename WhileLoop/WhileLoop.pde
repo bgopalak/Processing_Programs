@@ -1,37 +1,45 @@
-Circle c1 = new Circle(200,200,20);
-Circle c2 = new Circle(0,300,100);
-
 Circle[] C =  new Circle [100];
-
 int i = 0;
+int flip = 0;
 
 void setup() {
   size(400,400);
+  colorMode(HSB, 360, 100, 100);
+  color x;
   while (i < 100){
-    C[i]= new Circle(random(10,350),random(10,350),25);
+    C[i]= new Circle(random(10,350),random(10,350),random(10,35));
+    C[i].speed(random(-2,2));
+    x = color(random(100,255),random(40,100),random(0 ,75),255);
+    C[i].changeColor(x);
     i++;
   }
-  c1.speed(1);
-  c2.speed(2);
 }
 
 // Just simple movements
 void draw(){
   background(103);
-  //c1.change(0,200,100);
-  c1.show();
-  //c2.change(0,300,100);
-
-  c2.show();
-  c1.move();
-  c2.move();
-
   i = 0;
   while(i < 100)
   {
+    stroke(C[i].clr);
+    line(0,0,C[i].x,C[i].y);
     C[i].show();
+    C[i].move();
     i++;
   }
+/*
+    if(flip ==0){
+      C[i].x= C[i].x+C[i].speed;
+    }
+    else{
+      C[i].x = C[i].x-C[i].speed;
+    }
+  }
+  if(flip ==0)
+    flip = 1;
+  else
+    flip = 0;
+    */
 }
 
 
@@ -40,6 +48,7 @@ class Circle {
 float x,y;
 float diameter;
 float speed;
+color clr;
 
 Circle(float xPos, float yPos, float size ){
   x= xPos;
@@ -56,9 +65,13 @@ void change(float xPos, float yPos, float size ){
 
 void show(){
   //fill(255,0,0);
-  fill(random(0,255),random(0,255),random(0,255));
+  fill(clr);
   noStroke();
   ellipse(x,y,diameter/2,diameter/2);
+  }
+
+void changeColor(color c){
+  clr = c;
   }
 
 void speed(float sp){
