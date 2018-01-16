@@ -15,16 +15,17 @@ import java.io.IOException;
 public class CircleMove extends PApplet {
 
 
-Circle c1 = new Circle(200,200,100);
+Circle c1 = new Circle(200,200,20);
 Circle c2 = new Circle(0,300,100);
 
 
 public void setup() {
   
-  c1.speed(0.2f);
-  c2.speed(0.1f);
+  c1.speed(1);
+  c2.speed(2);
 }
 
+// Just simple movements
 public void draw(){
   background(103);
   //c1.change(0,200,100);
@@ -37,7 +38,7 @@ public void draw(){
 }
 
 
-// Circle Class
+// Circle Class. All definitions go here
 class Circle {
 float x,y;
 float diameter;
@@ -68,6 +69,8 @@ public void speed(float sp){
 
 public void move() {
   x = x+speed;
+  if(x >= 400+diameter)
+    x=0;
 }
 }
   public void settings() {  size(400,400); }

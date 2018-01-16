@@ -1,12 +1,12 @@
 
-Circle c1 = new Circle(200,200,100);
+Circle c1 = new Circle(200,200,20);
 Circle c2 = new Circle(0,300,100);
 
 
 void setup() {
   size(400,400);
-  c1.speed(0.2);
-  c2.speed(0.1);
+  c1.speed(1);
+  c2.speed(2);
 }
 
 // Just simple movements
@@ -53,5 +53,7 @@ void speed(float sp){
 
 void move() {
   x = x+speed;
+  if(x >= 400+diameter)
+    x=0;
 }
 }
