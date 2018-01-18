@@ -1,0 +1,62 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class StainedGlass extends PApplet {
+
+float x=0;
+
+public void setup() {
+  
+  //colorMode(RGB, 360, 100, 100);
+  int i =0;
+  float x= 0;
+  noStroke();
+  /*fill(255,0,0,150);
+  rect(0,0,200,600);
+  fill(0,255,0,150);
+  rect(200,0,400,600);
+  fill(0,0,255,150);
+  rect(400,0,600,600);*/
+  background(103);
+}
+
+public void draw() {
+  int i = 0;
+  //background(103);
+  //fill(0,0,0,5);
+  //rect(x,0,x+200,600);
+  background(0);
+  while(i<=200){
+    fill(random(50,255),random(10,255),random(100,255),100);
+    x = random(75,125);
+    ellipse(random(0,600),random(0,600),x,x);
+    fill(random(0,255),random(0,255),random(0,255),70);
+    rect(random(0,600),random(0,600),random(0,600),random(0,600));
+    i=i+1;
+  }
+  delay(1000);
+
+
+
+}
+  public void settings() {  size(600,600); }
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "StainedGlass" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
+}
