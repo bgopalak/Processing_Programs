@@ -15,16 +15,18 @@ import java.io.IOException;
 public class StainedGlass extends PApplet {
 
 float x=0;
+int i = 0;
 
+// Setup with pretty much nothing. Except noStroke
 public void setup() {
   
   noStroke();
 }
 
-public void draw() {
-  int i = 0;
-  background(0);
+// Draw keeps refreshing every 2 seconds.
 
+public void draw() {
+  background(0);
   while(i<=200){
       fill(random(50,255),random(10,255),random(100,255),100);
       x = random(75,125);
@@ -34,10 +36,12 @@ public void draw() {
       i=i+1;
     }
 
-  fill(100,100,0,100);
+// Name on the front of the screen
+  //fill(100,100,0,200);
   textSize(40);
   text("SHREYA Balaji",200,200);
   delay(2000);
+  i= 0;
 }
   public void settings() {  size(600,600); }
   static public void main(String[] passedArgs) {

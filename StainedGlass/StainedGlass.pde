@@ -1,4 +1,5 @@
 float x=0;
+int i = 0;
 
 // Setup with pretty much nothing. Except noStroke
 void setup() {
@@ -9,9 +10,7 @@ void setup() {
 // Draw keeps refreshing every 2 seconds.
 
 void draw() {
-  int i = 0;
   background(0);
-
   while(i<=200){
       fill(random(50,255),random(10,255),random(100,255),100);
       x = random(75,125);
@@ -22,8 +21,9 @@ void draw() {
     }
 
 // Name on the front of the screen
-  fill(100,100,0,100);
+  //fill(100,100,0,200);
   textSize(40);
   text("SHREYA Balaji",200,200);
   delay(2000);
+  i= 0;
 }
