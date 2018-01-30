@@ -19,7 +19,7 @@ function draw() {
     }
   }
 
-  if (mouseX != pmouseX && mouseY != pmouseY) {
+  if (mouseX != pmouseX || mouseY != pmouseY) {
     for (x = 0; x <= 150; x = x + 1) {
       //random circles and rectangles
       fill(random(0, 255), random(0, 255), random(0, 255), random(40, 70));
