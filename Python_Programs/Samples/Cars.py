@@ -1,3 +1,4 @@
+# This is a object oriented example
 import pygame
 import math
 import random
