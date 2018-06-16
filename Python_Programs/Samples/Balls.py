@@ -32,6 +32,8 @@ while not crashed:
     car(100+100*math.sin(x),y)
     y=y-1
     x= x+0.1
+    if(y <=0) :
+        y =(display_height*0.8)
 
     pygame.display.update()
     clock.tick(60)
